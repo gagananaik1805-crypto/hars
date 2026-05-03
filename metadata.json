@@ -1,0 +1,6 @@
+{
+  "name": "Simple Med",
+  "description": "Helping elderly and non-technical users understand complex prescriptions with AI-powered simplification and smart reminders.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": []
+}

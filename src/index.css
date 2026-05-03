@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,900;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-premium-navy: #0a1128;
+  --color-premium-teal: #008080;
+  --color-premium-blue: #001f3f;
+  --color-neon-teal: #00ffcc;
+  --color-neon-blue: #007bff;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-white bg-[#050a18] overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button, a {
+    @apply cursor-pointer min-h-[44px];
+  }
+}
+
+/* Futuristic Glassmorphism */
+.glass {
+  @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+}
+
+.glass-accent {
+  @apply bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.1)];
+}
+
+/* Dark Premium Background Layers */
+.premium-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #0a1128 0%, #050a18 100%);
+}
+
+.bg-glow {
+  position: absolute;
+  filter: blur(120px);
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* ECG Pattern Overlay */
+.ecg-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='100' viewBox='0 0 200 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 L40,50 L50,10 L60,90 L70,50 L120,50 L130,30 L140,70 L150,50 L200,50' fill='none' stroke='%2300ffcc' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 400px 200px;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  from { background-position: 0 0; }
+  to { background-position: 400px 0; }
+}
